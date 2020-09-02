@@ -1,0 +1,4 @@
+* @ugurozgen
+*.js @ugurozgen
+*.yml @ugurozgen
+/public/ @ugurozgen
