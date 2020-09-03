@@ -1,5 +1,11 @@
 #!/bin/sh -l
 
+if [ true ] 
+then
+    echo "error"
+    exit 222
+fi
+
 echo "::debug ::Debug Message"
 echo "::warning ::warning message"
 echo "::error ::error message"
