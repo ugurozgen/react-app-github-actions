@@ -13,7 +13,6 @@ jobs:
                   # assignees: 'ugurozgen,ugurozgenbot' 3 or
                   assignees: |
                       ugurozgen
-                      ugurozgenbot
             - run: |
                   echo ${{ steps.issue.outputs.issue }}
             - uses: ./.github/actions/hello

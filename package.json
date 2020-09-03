@@ -29,7 +29,7 @@
     "husky": {
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-            "prepare-commit-msg": "npm run ncc:hello && npm run ncc:issue && npm run format && git add . && exec < /dev/tty && git cz --hook || true"
+            "prepare-commit-msg": "npm run ncc:hello && npm run ncc:issue && npm run format && git add -A && exec < /dev/tty && git cz --hook || true"
         }
     },
     "browserslist": {
