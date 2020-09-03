@@ -19,7 +19,10 @@ jobs:
               id: hello
               with:
                   who-to-greet: "world"
-
+            # - uses: ./.github/actions/hello
+            #   id: hello
+            #   with:
+            #       who-to-greet: "world"
             - run: |
                   echo "time: ${{ steps.hello.outputs.time }}"
                   echo $HELLO
