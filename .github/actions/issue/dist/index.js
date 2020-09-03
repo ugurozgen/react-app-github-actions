@@ -10236,7 +10236,7 @@ module.exports = /******/ (function (modules, runtime) {
                     const body = core.getInput("body")
                     const assignees = core.getInput("assignees")
 
-                    const octokit = new github.GitHub(token) // octokit is github rest api
+                    const octokit = new github.getOctokit(token) // octokit is github rest api
 
                     const response = await octokit.issues.create({
                         // owner: github.context.repo.owner,
