@@ -1,0 +1,19 @@
+name: Hello world
+
+author: Ugur Ozgen
+
+description: Dummy description
+
+inputs:
+  who-to-greed:
+    description: 'Who to greet'
+    required: true
+    default: Ugur
+
+outputs:
+  time:
+    description: "The greeting time"
+
+runs:
+  using: "node12"
+  main: "dist/index.js"

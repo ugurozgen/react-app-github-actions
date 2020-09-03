@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@actions/core": "^1.2.5",
+    "@actions/github": "^4.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -17,7 +19,8 @@
     "eject": "react-scripts eject",
     "format:check": "npx prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
     "format": "npx prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
-    "surge:token": "surge whoami && surge token"
+    "surge:token": "surge whoami && surge token",
+    "ncc": "npx ncc build .github/actions/hello/index.js  -o .github/actions/hello/dist"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +46,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.2",
+    "@zeit/ncc": "^0.22.3",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.2.5",
     "semantic-release": "^17.1.1"

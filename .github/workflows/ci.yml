@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [develop, master]
+    branches: [develop, master22] # it is master but we don't wanna run it on master
   push:
-    branches: [develop, master]
+    branches: [develop, master22]
 
 jobs:
   build:
