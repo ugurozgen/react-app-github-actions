@@ -1,59 +1,59 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@actions/core": "^1.2.5",
-    "@actions/github": "^4.0.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format:check": "npx prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
-    "format": "npx prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
-    "surge:token": "surge whoami && surge token",
-    "ncc": "npx ncc build .github/actions/hello/index.js  -o .github/actions/hello/dist"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "prepare-commit-msg": "npm run format && exec < /dev/tty && git cz --hook || true"
+    "name": "my-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@actions/core": "^1.2.5",
+        "@actions/github": "^4.0.0",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-scripts": "3.4.3"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "format:check": "npx prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
+        "format": "npx prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
+        "surge:token": "surge whoami && surge token",
+        "ncc": "npx ncc build .github/actions/hello/index.js  -o .github/actions/hello/dist"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "prepare-commit-msg": "npm run ncc && npm run format && exec < /dev/tty && git cz --hook || true"
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^9.1.2",
+        "@commitlint/config-conventional": "^9.1.2",
+        "@zeit/ncc": "^0.22.3",
+        "cz-conventional-changelog": "^3.3.0",
+        "husky": "^4.2.5",
+        "semantic-release": "^17.1.1"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^9.1.2",
-    "@zeit/ncc": "^0.22.3",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^4.2.5",
-    "semantic-release": "^17.1.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
 }

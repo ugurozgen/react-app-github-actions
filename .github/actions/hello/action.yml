@@ -5,15 +5,15 @@ author: Ugur Ozgen
 description: Dummy description
 
 inputs:
-  who-to-greet:
-    description: "Who to greet"
-    required: true
-    default: Ugur
+    who-to-greet:
+        description: "Who to greet"
+        required: true
+        default: Ugur
 
 outputs:
-  time:
-    description: "The greeting time"
+    time:
+        description: "The greeting time"
 
 runs:
-  using: "node12"
-  main: "dist/index.js"
+    using: "node12"
+    main: "dist/index.js"
