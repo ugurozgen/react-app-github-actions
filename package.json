@@ -20,7 +20,8 @@
         "format:check": "npx prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
         "format": "npx prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
         "surge:token": "surge whoami && surge token",
-        "ncc": "npx ncc build .github/actions/hello/index.js  -o .github/actions/hello/dist"
+        "ncc:hello": "npx ncc build .github/actions/hello/index.js  -o .github/actions/hello/dist",
+        "ncc:issue": "npx ncc build .github/actions/issue/index.js  -o .github/actions/issue/dist"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -28,7 +29,7 @@
     "husky": {
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-            "prepare-commit-msg": "npm run ncc && npm run format && exec < /dev/tty && git cz --hook || true"
+            "prepare-commit-msg": "npm run ncc:hello && npm run ncc:issue && npm run format && git add . && exec < /dev/tty && git cz --hook || true"
         }
     },
     "browserslist": {
