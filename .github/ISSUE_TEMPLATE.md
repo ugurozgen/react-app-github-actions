@@ -1,6 +1,6 @@
 ---
 title: issue about dummy problem
-assignees: ugurozgen, ugurozgenbot
+assignees: ugurozgen
 labels: bug, enhancement
 ---
 
