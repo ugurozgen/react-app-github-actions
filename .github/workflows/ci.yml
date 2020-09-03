@@ -50,7 +50,7 @@ jobs:
         with:
           name: build
           path: build
-          
+
       - name: zip Assets
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
@@ -83,3 +83,9 @@ jobs:
         run: npx codecov
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Open Issue
+        if: failure() && github.event_name == 'pull_request'
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
